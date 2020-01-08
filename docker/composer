@@ -1,0 +1,5 @@
+#!/bin/bash
+
+HOST_USER_NAME=`whoami`
+HOST_USER_ID=`id -u ${HOST_USER_NAME}`
+docker run --user=$HOST_USER_ID --rm --interactive --tty --volume $PWD:/app composer $@

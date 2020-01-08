@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    mysql:
+        image: coffee-machine.mysql
+        container_name: coffee-machine.mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: 'coffee_machine'
+            MYSQL_DATABASE: 'coffee_machine'
+            MYSQL_USER: 'coffee_machine'
+            MYSQL_PASSWORD: 'coffee_machine'
+        ports:
+            - "3305:3306"
+        networks:
+            coffee-machine_net:
+                ipv4_address: 172.50.0.3
+        tty: true
+
+networks:
+    coffee-machine_net:
+        external: true
