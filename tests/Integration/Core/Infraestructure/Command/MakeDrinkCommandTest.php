@@ -1,9 +1,9 @@
 <?php
 
-namespace Deliverea\CoffeeMachine\Tests\Integration\Console;
+namespace Tests\Integration\Core\Infraestructure\Command;
 
-use Deliverea\CoffeeMachine\Console\MakeDrinkCommand;
-use Deliverea\CoffeeMachine\Tests\Integration\IntegrationTestCase;
+use Core\Infraestructure\Command\MakeDrinkCommand;
+use Tests\Integration\IntegrationTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 class MakeDrinkCommandTest extends IntegrationTestCase
@@ -12,8 +12,9 @@ class MakeDrinkCommandTest extends IntegrationTestCase
     {
         parent::setUp();
 
-        $this->application->add(new MakeDrinkCommand());
+        $this->application->add(new MakeDrinkCommand($this->container));
     }
+
 
     /**
      * @dataProvider ordersProvider

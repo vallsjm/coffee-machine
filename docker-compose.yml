@@ -2,20 +2,28 @@ version: '3'
 
 services:
     mysql:
-        image: coffee-machine.mysql
-        container_name: coffee-machine.mysql
+        image: mysql:5.7
+        container_name: ${PROJECT_NAME}.mysql
         environment:
             MYSQL_ROOT_PASSWORD: 'coffee_machine'
             MYSQL_DATABASE: 'coffee_machine'
             MYSQL_USER: 'coffee_machine'
             MYSQL_PASSWORD: 'coffee_machine'
         ports:
-            - "3305:3306"
+            - 3306:3306
+        volumes:
+            - ./docker/scripts:/docker-entrypoint-initdb.d
         networks:
-            coffee-machine_net:
-                ipv4_address: 172.50.0.3
-        tty: true
+            - mysqldb
+
+    php-cli:
+        build: docker/images/php-cli
+        container_name: ${PROJECT_NAME}.php-cli
+        working_dir: /usr/src/myapp
+        volumes:
+            - .:/usr/src/myapp
+        networks:
+            - mysqldb
 
 networks:
-    coffee-machine_net:
-        external: true
+    mysqldb:

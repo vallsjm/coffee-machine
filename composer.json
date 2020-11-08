@@ -1,13 +1,18 @@
 {
     "require": {
         "symfony/console": "^4.2",
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^7.5",
+        "symfony/dependency-injection": "^4.2",
+        "symfony/config": "^4.2",
+        "symfony/yaml": "^4.2",
+        "beberlei/assert": "^3.2"
     },
     "autoload": {
         "psr-4": {
-            "Deliverea\\CoffeeMachine\\": "src",
-            "Deliverea\\CoffeeMachine\\Tests\\Unit\\": "tests/Unit",
-            "Deliverea\\CoffeeMachine\\Tests\\Integration\\": "tests/Integration"
+            "Common\\": "src/Common",
+            "Core\\": "src/Core",
+            "Tests\\Unit\\": "tests/Unit",
+            "Tests\\Integration\\": "tests/Integration"
         }
     }
 }

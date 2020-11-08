@@ -1,0 +1,4 @@
+services:
+    core.service.machine:
+        class:    Core\Application\Service\MachineService
+        arguments: ['@core.repository.drink','@core.repository.order']
