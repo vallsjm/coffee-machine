@@ -6,8 +6,8 @@ Coffee Machine is an awesome console application that from a few input parameter
 
 Command
 ```
-app:order-drink 
-
+  app:order-drink   Order a drink and output the status
+  app:order-resume  Return the money earned
 ```
 
 Arguments
