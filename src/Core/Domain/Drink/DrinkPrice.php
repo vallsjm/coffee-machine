@@ -14,7 +14,7 @@ final class DrinkPrice extends BaseMoney
     public function validate(float $value): void
     {
         try {
-            Assertion::min($value, 0);
+            Assertion::greaterThan($value, 0);
         } catch (AssertionFailedException $e) {
             throw DrinkIsNotFree::create();
         }

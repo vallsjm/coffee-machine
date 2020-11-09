@@ -13,6 +13,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 $containerBuilder = new ContainerBuilder();
 $loader = new YamlFileLoader($containerBuilder, new FileLocator(__DIR__.'/config'));
+$loader->load('parameters.yaml');
 $loader->load('services.yaml');
 $loader->load('repositories.yaml');
 

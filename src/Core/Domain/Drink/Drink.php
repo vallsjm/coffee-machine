@@ -28,7 +28,7 @@ final class Drink
     {
         return new self(
             DrinkType::fromString($data['type']),
-            DrinkPrice::fromString($data['price'])
+            DrinkPrice::fromFloat((float) $data['price'])
         );
     }
 

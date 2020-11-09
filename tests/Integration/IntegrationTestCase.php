@@ -20,6 +20,7 @@ class IntegrationTestCase extends TestCase
 
         $container = new ContainerBuilder();
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../config'));
+        $loader->load('parameters_test.yaml');
         $loader->load('services.yaml');
         $loader->load('repositories.yaml');
 
