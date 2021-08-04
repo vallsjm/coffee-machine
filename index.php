@@ -19,7 +19,14 @@ $loader->load('repositories.yaml');
 
 $application = new Application();
 
+$eventPublisher = $containerBuilder->get('core.event.publisher');
+$eventSubscriberPersist = $containerBuilder->get('core.event.subscriber.persist');
+$eventPublisher->subscribe(
+    $eventSubscriberPersist
+);
+
 $application->add(new MakeDrinkCommand($containerBuilder));
 $application->add(new OrderResumeCommand($containerBuilder));
+
 
 $application->run();

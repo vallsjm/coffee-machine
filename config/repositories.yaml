@@ -3,6 +3,10 @@ services:
         class:    Common\Infraestructure\PDO\Connection
         arguments: ['%mysql.dsn%', '%mysql.user%', '%mysql.password%']
 
+    core.repository.eventStore:
+        class:    Common\Infraestructure\PDO\MysqlEventStoreRepository
+        arguments: ['@common.pdo.connection']
+
     core.repository.drink:
         class:    Core\Infraestructure\Persistence\PDO\MysqlDrinkRepository
         arguments: ['@common.pdo.connection']

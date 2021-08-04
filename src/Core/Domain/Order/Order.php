@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace Core\Domain\Order;
 
 use Core\Domain\Drink\Drink;
+use Core\Domain\Order\Event\OrderWasCreated;
+use Common\Domain\DomainEvent\EventRecorderTrait;
 
 final class Order
 {
+    use EventRecorderTrait;
+
     private $drink;
     private $sugar;
     private $extraHot;
@@ -20,6 +24,10 @@ final class Order
         $this->drink = $drink;
         $this->sugar = $sugar;
         $this->extraHot = $extraHot;
+
+        $this->recordThat(
+            OrderWasCreated::fromOrder($this)
+        );
     }
 
     public static function create(
@@ -44,5 +52,4 @@ final class Order
     {
         return $this->extraHot;
     }
-
 }

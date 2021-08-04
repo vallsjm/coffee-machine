@@ -1,4 +1,12 @@
 services:
+
+    core.event.subscriber.persist:
+        class:    Common\Domain\DomainEvent\PersistDomainEventSubscriber
+        arguments: ['@core.repository.eventStore']
+
+    core.event.publisher:
+        factory: ['Common\Domain\DomainEvent\DomainEventPublisher', 'instance']
+
     core.service.machine:
         class:    Core\Application\Service\MachineService
         arguments: ['@core.repository.drink','@core.repository.order']
