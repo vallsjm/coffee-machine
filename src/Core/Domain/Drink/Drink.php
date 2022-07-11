@@ -6,16 +6,10 @@ namespace Core\Domain\Drink;
 
 final class Drink
 {
-    private $type;
-    private $price;
-
     private function __construct(
-        DrinkType $type,
-        DrinkPrice $price
-    ) {
-        $this->type = $type;
-        $this->price = $price;
-    }
+        private DrinkType $type,
+        private DrinkPrice $price
+    ) {}
 
     public static function create(
         DrinkType $type,

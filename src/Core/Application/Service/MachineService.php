@@ -16,16 +16,10 @@ use Core\Domain\Drink\Exception\DrinkNotFound;
 
 final class MachineService
 {
-    private $repositoryDrink;
-    private $repositoryOrder;
-
     public function __construct(
-        DrinkRepository $repositoryDrink,
-        OrderRepository $repositoryOrder
-    ) {
-        $this->repositoryDrink = $repositoryDrink;
-        $this->repositoryOrder = $repositoryOrder;
-    }
+        private DrinkRepository $repositoryDrink,
+        private OrderRepository $repositoryOrder
+    ) {}
 
     public function payDrink(string $drinkType, string $money): Drink
     {

@@ -8,7 +8,7 @@ use Common\Domain\ValueObject\ValueObjectInterface;
 
 abstract class BaseString implements ValueObjectInterface
 {
-    private $value;
+    private string $value;
 
     final private function __construct(string $value)
     {

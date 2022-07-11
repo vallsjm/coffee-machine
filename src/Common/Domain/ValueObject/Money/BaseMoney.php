@@ -8,7 +8,7 @@ use Common\Domain\ValueObject\ValueObjectInterface;
 
 abstract class BaseMoney implements ValueObjectInterface
 {
-    private $value;
+    private float $value;
 
     final private function __construct(float $value)
     {

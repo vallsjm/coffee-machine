@@ -6,7 +6,7 @@ namespace Common\Infraestructure\PDO;
 
 abstract class BaseRepository
 {
-    protected $connection;
+    protected Connection $connection;
 
     public function __construct(Connection $connection)
     {

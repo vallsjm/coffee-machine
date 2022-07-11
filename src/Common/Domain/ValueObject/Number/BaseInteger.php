@@ -8,7 +8,7 @@ use Common\Domain\ValueObject\ValueObjectInterface;
 
 abstract class BaseInteger implements ValueObjectInterface
 {
-    private $value;
+    private int $value;
 
     final private function __construct(int $value)
     {

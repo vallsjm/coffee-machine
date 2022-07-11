@@ -10,7 +10,7 @@ use Ramsey\Uuid\UuidInterface;
 
 abstract class BaseUuid implements ValueObjectInterface
 {
-    private $uuid;
+    private UuidInterface $uuid;
 
     final private function __construct(UuidInterface $uuid)
     {
