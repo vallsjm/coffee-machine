@@ -8,9 +8,9 @@ use Common\Domain\ValueObject\ValueObjectInterface;
 
 abstract class BaseMoney implements ValueObjectInterface
 {
-    private $value;
+    private float $value;
 
-    private final function __construct(float $value)
+    final private function __construct(float $value)
     {
         $this->validate($value);
         $this->value = $value;

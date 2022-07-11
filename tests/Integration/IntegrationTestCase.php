@@ -14,7 +14,7 @@ class IntegrationTestCase extends TestCase
     protected $application;
     protected $container;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -29,7 +29,7 @@ class IntegrationTestCase extends TestCase
         $this->application = new Application();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
     }

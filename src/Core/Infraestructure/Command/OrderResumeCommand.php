@@ -11,7 +11,7 @@ use Symfony\Component\Console\Helper\Table;
 class OrderResumeCommand extends Command
 {
     protected static $defaultName = 'app:order-resume';
-    private $container;
+    private ContainerInterface $container;
 
     public function __construct(ContainerInterface $container)
     {
@@ -36,6 +36,9 @@ class OrderResumeCommand extends Command
             $table->render();
         } catch (\Throwable $e) {
             $output->writeln($e->getMessage());
+            return Command::FAILURE;
         }
+
+        return Command::SUCCESS;
     }
 }

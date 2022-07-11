@@ -6,10 +6,9 @@ namespace Core\Domain\Drink\Type;
 
 final class DrinkTypeType
 {
-    const TYPES = [
+    public const TYPES = [
         'tea',
         'coffee',
         'chocolate'
     ];
-
 }

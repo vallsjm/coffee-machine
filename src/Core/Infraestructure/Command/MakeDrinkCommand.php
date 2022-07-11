@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class MakeDrinkCommand extends Command
 {
     protected static $defaultName = 'app:order-drink';
-    private $container;
+    private ContainerInterface $container;
 
     public function __construct(ContainerInterface $container)
     {
@@ -69,6 +69,9 @@ class MakeDrinkCommand extends Command
             $output->writeln($serviceMachine->orderStatus($order));
         } catch (\Throwable $e) {
             $output->writeln($e->getMessage());
+            return Command::FAILURE;
         }
+
+        return Command::SUCCESS;
     }
 }

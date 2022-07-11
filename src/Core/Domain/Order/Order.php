@@ -8,19 +8,11 @@ use Core\Domain\Drink\Drink;
 
 final class Order
 {
-    private $drink;
-    private $sugar;
-    private $extraHot;
-
     private function __construct(
-        Drink $drink,
-        OrderSugar $sugar,
-        bool $extraHot
-    ) {
-        $this->drink = $drink;
-        $this->sugar = $sugar;
-        $this->extraHot = $extraHot;
-    }
+        private Drink $drink,
+        private OrderSugar $sugar,
+        private bool $extraHot
+    ) {}
 
     public static function create(
         Drink $drink,
@@ -44,5 +36,4 @@ final class Order
     {
         return $this->extraHot;
     }
-
 }

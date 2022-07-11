@@ -5,10 +5,10 @@ services:
         image: mysql:5.7
         container_name: ${PROJECT_NAME}.mysql
         environment:
-            MYSQL_ROOT_PASSWORD: 'coffee_machine'
-            MYSQL_DATABASE: 'coffee_machine'
-            MYSQL_USER: 'coffee_machine'
-            MYSQL_PASSWORD: 'coffee_machine'
+            MYSQL_ROOT_PASSWORD: 'coffee-machine'
+            MYSQL_DATABASE: 'coffee-machine'
+            MYSQL_USER: 'coffee-machine'
+            MYSQL_PASSWORD: 'coffee-machine'
         ports:
             - 3306:3306
         volumes:
@@ -17,7 +17,7 @@ services:
             - mysqldb
 
     php-cli:
-        build: docker/images/php-cli
+        build: ./docker/images/php-cli
         container_name: ${PROJECT_NAME}.php-cli
         working_dir: /usr/src/myapp
         volumes:
