@@ -10,7 +10,7 @@ abstract class BaseMoney implements ValueObjectInterface
 {
     private $value;
 
-    private final function __construct(float $value)
+    final private function __construct(float $value)
     {
         $this->validate($value);
         $this->value = $value;

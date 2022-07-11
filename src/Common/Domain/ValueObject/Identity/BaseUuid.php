@@ -12,7 +12,7 @@ abstract class BaseUuid implements ValueObjectInterface
 {
     private $uuid;
 
-    private final function __construct(UuidInterface $uuid)
+    final private function __construct(UuidInterface $uuid)
     {
         $this->validate($uuid->toString());
         $this->uuid = $uuid;

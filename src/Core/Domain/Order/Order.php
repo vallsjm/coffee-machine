@@ -44,5 +44,4 @@ final class Order
     {
         return $this->extraHot;
     }
-
 }

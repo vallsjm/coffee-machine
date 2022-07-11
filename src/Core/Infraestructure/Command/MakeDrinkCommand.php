@@ -69,6 +69,9 @@ class MakeDrinkCommand extends Command
             $output->writeln($serviceMachine->orderStatus($order));
         } catch (\Throwable $e) {
             $output->writeln($e->getMessage());
+            return Command::FAILURE;
         }
+
+        return Command::SUCCESS;
     }
 }

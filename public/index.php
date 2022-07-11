@@ -2,7 +2,7 @@
 <?php
 // application.php
 
-require __DIR__.'/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use Core\Infraestructure\Command\MakeDrinkCommand;
 use Core\Infraestructure\Command\OrderResumeCommand;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 $containerBuilder = new ContainerBuilder();
-$loader = new YamlFileLoader($containerBuilder, new FileLocator(__DIR__.'/config'));
+$loader = new YamlFileLoader($containerBuilder, new FileLocator(__DIR__ . '/../config'));
 $loader->load('parameters.yaml');
 $loader->load('services.yaml');
 $loader->load('repositories.yaml');

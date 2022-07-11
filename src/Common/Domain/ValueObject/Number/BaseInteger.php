@@ -10,7 +10,7 @@ abstract class BaseInteger implements ValueObjectInterface
 {
     private $value;
 
-    private final function __construct(int $value)
+    final private function __construct(int $value)
     {
         $this->validate($value);
         $this->value = $value;

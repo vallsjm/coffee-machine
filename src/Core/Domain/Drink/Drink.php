@@ -41,5 +41,4 @@ final class Drink
     {
         return $this->price;
     }
-
 }

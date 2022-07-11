@@ -10,7 +10,7 @@ abstract class BaseString implements ValueObjectInterface
 {
     private $value;
 
-    private final function __construct(string $value)
+    final private function __construct(string $value)
     {
         $this->validate($value);
         $this->value = $value;

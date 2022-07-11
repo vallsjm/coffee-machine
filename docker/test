@@ -1,8 +1,0 @@
-#!/bin/bash
-
-docker run -it --rm \
-    --name my-running-script \
-    -v "$PWD":/usr/src/myapp \
-    -w /usr/src/myapp \
-    --network "coffee-machine_mysqldb" \
-    coffee-machine.php-cli php vendor/bin/phpunit $@

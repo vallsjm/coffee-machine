@@ -8,7 +8,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 
 class MakeDrinkCommandTest extends IntegrationTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -23,7 +23,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
         string $drinkType,
         string $money,
         int $sugars,
-        string $extraHot,
+        int $extraHot,
         string $expectedOutput
     ): void {
         $command = $this->application->find('app:order-drink');
@@ -47,7 +47,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
     {
         return [
             [
-                'chocolate', '0.7', 1, '', 'You have ordered a chocolate with 1 sugars (stick included)' . PHP_EOL
+                'chocolate', '0.7', 1, 0, 'You have ordered a chocolate with 1 sugars (stick included)' . PHP_EOL
             ],
             [
                 'tea', '0.4', 0, 1, 'You have ordered a tea extra hot' . PHP_EOL

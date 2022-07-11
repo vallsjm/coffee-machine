@@ -103,18 +103,17 @@ Something like the following table would be great:
 
 Install and run the application.
 ```
-docker/composer install
-docker/up
+make install
 ```
 
 Examples of the use of the application.
 ```
-docker/console app:order-drink tea 0.5 1 -e
-docker/console app:order-drink coffee 0.5
-docker/console app:order-drink chocolate 1 --extra-hot
+make console command="app:order-drink tea 0.5 1 -e"
+make console command="app:order-drink coffee 0.5"
+make console command="app:order-drink chocolate 1 --extra-hot"
 ```
 
 Run tests
 ```
-docker/test
+make test
 ```

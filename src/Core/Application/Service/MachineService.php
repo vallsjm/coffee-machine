@@ -22,8 +22,7 @@ final class MachineService
     public function __construct(
         DrinkRepository $repositoryDrink,
         OrderRepository $repositoryOrder
-    )
-    {
+    ) {
         $this->repositoryDrink = $repositoryDrink;
         $this->repositoryOrder = $repositoryOrder;
     }
@@ -84,5 +83,4 @@ final class MachineService
 
         return $txt;
     }
-
 }

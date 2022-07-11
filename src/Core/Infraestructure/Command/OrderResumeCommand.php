@@ -36,6 +36,9 @@ class OrderResumeCommand extends Command
             $table->render();
         } catch (\Throwable $e) {
             $output->writeln($e->getMessage());
+            return Command::FAILURE;
         }
+
+        return Command::SUCCESS;
     }
 }

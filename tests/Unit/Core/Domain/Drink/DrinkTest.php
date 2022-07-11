@@ -13,7 +13,7 @@ final class DrinkTest extends TestCase
 {
     private $drink;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

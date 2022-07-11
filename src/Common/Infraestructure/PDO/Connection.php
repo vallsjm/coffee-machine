@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Common\Infraestructure\PDO;
 
-use \PDO;
+use PDO;
 
 final class Connection
 {
@@ -23,5 +23,4 @@ final class Connection
     {
         return $this->connection;
     }
-
 }
